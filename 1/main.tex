@@ -1,0 +1,172 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 1}
+\fancyhead[R]{25th Jan}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+
+If $A$ and $B$ are sets, show that
+$$
+(A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)
+$$
+
+\textbf{Solution:}
+
+We consider two scenarios here: 1) Both $A$ and $B$ are non-empty sets; 2) At least one of them are empty sets.
+
+\subsection*{1)}
+
+If both sets are non-empty sets, we need to prove this by showing both sides contain the exact same elements:
+
+From left to right:
+
+\begin{align*}
+& \forall x \in (A \setminus B) \cup (B \setminus A) \\
+\Rightarrow & x \in A \setminus B \lor x \in B \setminus A \\
+\Rightarrow & x \in (A \land x \notin B) \lor x \in (B \land x \notin A) \\
+\Rightarrow & x \in (A \land x \notin A \cap B) \lor x \in (B \land x \notin A \cap B) \\
+\Rightarrow & x \notin A \cap B \land (x \in A \lor x \in B) \\
+\Rightarrow & x \notin A \cap B \land x \in (A \cup B) \\
+\Rightarrow & x \in (A \cup B) \setminus (A \cap B)
+\end{align*}
+
+meaning that $(A \setminus B) \cup (B \setminus A) \subseteq (A \cup B) \setminus (A \cap B)$.
+
+From right to left:
+
+\begin{align*}
+& \forall x \in (A \cup B) \setminus (A \cap B) \\
+\Rightarrow & x \in A \cup B \land x \notin A \cap B \\
+\Rightarrow & (x \in A \lor x \in B) \land x \notin A \cap B \\
+\Rightarrow & (x \in A \land x \notin A \cap B) \lor (x \in B \land x \notin A \cap B) \\
+\Rightarrow & (x \in A \land x \notin B) \lor (x \in B \land x \notin A) \\
+\Rightarrow & x \in A \setminus B \lor x \in B \setminus A \\
+\Rightarrow & x \in (A \setminus B) \cup x \in (B \setminus A)
+\end{align*}
+
+meaning that $(A \cup B) \setminus (A \cap B) \subseteq (A \setminus B) \cup (B \setminus A)$.
+
+Therefore, we have shown that $(A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)$ when both sets are non-empty.
+
+\subsection*{2)}
+
+If at least one of them is empty, we can directly show that both sides are empty. Since $A$ or $B$ is empty, we suppose $A$ is empty.
+
+\begin{itemize}
+\item Since $A$ is empty, $A \setminus B$ is empty, and $B \setminus A$ is set $B$. Therefore, the left side is set $B$.
+\item Since $A$ is empty, $A \cup B$ is set $B$, $A \cap B$ is empty, which means that $A \cup B \setminus A \cap B = B \setminus \emptyset = B$. Therefore, the right side is also set $B$.
+\end{itemize}
+
+\subsection*{Conclusion}
+
+We have shown that both sides are the other non-empty set when at least one of them is empty, and the same elements when both are non-empty. Therefore, the equation holds.
+
+\newpage
+
+\section*{Exercise 2}
+
+Show that if $f: A \to B$ and $E, F$ are subsets of $A$, then
+$$
+f(E \cup F) = f(E) \cup f(F)
+$$
+and
+$$
+f(E \cap F) \subseteq f(E) \cap f(F)
+$$
+
+\textbf{Solution:}
+
+\subsection*{1)}
+
+$$f(E \cup F) = f(E) \cup f(F)$$
+
+From left to right:
+
+\begin{itemize}
+    \item $\forall y \in f(E \cup F)$, $\exists x$ such that $f(x) = y$, where $x \in E \cup F$, meaning that $x \in E \lor x \in F$
+    \item Since $E$ and $F$ are subsets of $A$ and $x \in E \lor x \in F$, we get $f(x) \in f(E) \lor f(x) \in f(F)$, meaning that $f(x) = y \in f(E) \cup f(F)$
+    \item Therefore, we successfully proved that $f(E \cup F) \subseteq f(E) \cup f(F)$
+\end{itemize}
+
+From right to left:
+
+\begin{itemize}
+    \item $\forall y \in f(E) \cup f(F) \Rightarrow y \in f(E) \lor y \in f(F)$
+    \item $\Rightarrow \exists x \in E \lor x \in F$ such that $f(x) = y$
+    \item $x \in E \lor x \in F \Rightarrow x \in E \cup F \Rightarrow f(x) = y \in f(E \cup F)$
+    \item Therefore, we successfully proved that $f(E) \cup f(F) \subseteq f(E \cup F)$
+\end{itemize}
+
+Hence, the equation holds for $f(E \cup F) = f(E) \cup f(F)$.
+
+\subsection*{2)}
+
+$$f(E \cap F) \subseteq f(E) \cap f(F)$$
+
+From left to right:
+
+\begin{align*}
+    & \forall y \in f(E \cap F), \exists x \in E \cap F \text{ s.t.} f(x) = y \\
+    \Rightarrow & x \in E \land x \in F \\
+    \Rightarrow & f(x) \in f(E) \land x \in f(F) \\
+    \Rightarrow & f(x) = y \in f(E) \cap f(F)
+\end{align*}
+
+\section*{Exercise 3}
+
+Let $f: A \to B$ and $g: B \to C$ be functions.
+\begin{itemize}
+    \item a) Show that if $g \circ f$ is injective, then $f$ is injective.
+    \item b) Show that if $g \circ f$ is surjective, then $g$ is surjective.
+\end{itemize}
+
+\textbf{Solution:}
+
+\subsection*{a)}
+
+To prove $f$ is injective, we need to show that if $f(x_1) = f(x_2)$, then $x_1 = x_2$.
+
+\begin{itemize}
+    \item Suppose $\exists x_1, x_2 \in A$ such that $f(x_1) = f(x_2)$
+    \item Then $g(f(x_1)) = g(f(x_2))$
+    \item Since $g \circ f$ is injective
+    \item We get $x_1 = x_2$
+    \item Hence by definition, $f$ is injective.
+\end{itemize}    
+
+\subsection*{b)}
+
+To prove $g$ is surjective, we need to show that $\forall y \in C, \exists x \in B$ such that $y = g(x)$
+
+\begin{itemize}
+    \item Since $g \circ f$ is surjective, $\forall y \in C, \exists a \in A$ such that $y = g(f(a))$
+    \item $\Rightarrow \exists x = f(a) \in B$ such that $g(f(a)) = g(x) = y$
+    \item Hence by definition, $g$ is surjective.
+\end{itemize}
+
+\newpage
+
+\section*{Exercise 4}
+
+Prove that $2^n < n! \forall n \geq 4, n \in N$ \\
+
+\textbf{Solution:}
+
+
+
+\end{document}
