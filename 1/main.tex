@@ -191,4 +191,42 @@ Since $n > 4$, we have $n > 2$. Therefore:
 \end{align*}
 
 Therefore, by mathematical induction, the statement holds for all $n \geq 4, n \in N$.
+
+\newpage
+
+\section*{Exercise 5}
+
+Let the numbers $x_n$ be defined as follows: $x_1 = 1, x_2 = 2$, and $x_{n+2} = \frac{1}{2}(x_{n+1} + x_n)$ for all $n \in \mathbb{N}$. Show that $1 \leq x_n \leq 2$ for all $n \in \mathbb{N}$.\\
+
+\textbf{Solution:}
+
+We use strong induction to prove this statement. First, let $P(n)$ be the statement $1 \leq x_n \leq 2$ for all $n \in \mathbb{N}$.
+
+\subsection*{Base Case}
+
+When $n = 1$ and $n = 2$, we have $x_1 = 1$ and $x_2 = 2$, which satisfies $1 \leq x_n \leq 2$, meaning that $P(1)$ and $P(2)$ are true. Therefore, the base case holds.
+
+\subsection*{Inductive Step}
+
+We assume $P(k)$ is true for all $k \leq n$ where $n \geq 2$, and we need to prove $P(n+1)$, meaning that we assume $1 \leq x_k \leq 2$ for all $k \leq n$, and need to prove $1 \leq x_{n+1} \leq 2$. \\
+
+By definition:
+$$x_{n+1} = \frac{1}{2}(x_n + x_{n-1})$$
+
+By our induction hypothesis:
+\begin{align*}
+   & 1 \leq x_n \leq 2 \\
+   & 1 \leq x_{n-1} \leq 2
+\end{align*}
+
+Therefore:
+\begin{align*}
+   & \frac{1}{2}(1 + 1) \leq \frac{1}{2}(x_n + x_{n-1}) \leq \frac{1}{2}(2 + 2) \\
+   \Rightarrow & 1 \leq x_{n+1} \leq 2
+\end{align*}
+
+This proves $P(n+1)$ is true whenever $P(k)$ is true for all $k \leq n$.
+
+By strong mathematical induction, $P(n)$ is true for all $n \in \mathbb{N}$, meaning that $1 \leq x_n \leq 2$ for all $n \in \mathbb{N}$.
+
 \end{document}
