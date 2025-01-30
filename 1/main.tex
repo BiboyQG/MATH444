@@ -167,6 +167,28 @@ Prove that $2^n < n! \forall n \geq 4, n \in N$ \\
 
 \textbf{Solution:}
 
+We use mathematical induction to prove this statement.
 
+\subsection*{Base Case}
 
+When $n = 4$, we have $2^4 = 16$ and $4! = 24$. Since $16 < 24$, the base case holds.
+
+\subsection*{Inductive Step}
+
+Suppose the statement holds for $n-1, n > 4$, i.e. $2^{n-1} < (n-1)!$. We need to show that the statement holds for $n$, i.e. $2^n < n!$.
+
+\begin{align*}
+    2^n & = 2 \times 2^{n-1} \\
+    & < 2 \times (n-1)! \\
+\end{align*}
+
+Since $n > 4$, we have $n > 2$. Therefore:
+
+\begin{align*}
+    & < 2 \times (n-1)! \\
+    & < n \times (n-1)! \\
+    & = n!
+\end{align*}
+
+Therefore, by mathematical induction, the statement holds for all $n \geq 4, n \in N$.
 \end{document}
