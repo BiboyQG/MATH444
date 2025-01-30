@@ -167,22 +167,22 @@ Prove that $2^n < n! \forall n \geq 4, n \in N$ \\
 
 \textbf{Solution:}
 
-We use mathematical induction to prove this statement.
+We use mathematical induction to prove this statement. Let $P(n)$ be the statement $2^n < n!$ for all $n \geq 4, n \in N$.
 
 \subsection*{Base Case}
 
-When $n = 4$, we have $2^4 = 16$ and $4! = 24$. Since $16 < 24$, the base case holds.
+When $n = 4$, we have $2^4 = 16$ and $4! = 24$. Since $16 < 24$, $P(4)$ is true. Therefore, the base case holds.
 
 \subsection*{Inductive Step}
 
-Suppose the statement holds for $n-1, n > 4$, i.e. $2^{n-1} < (n-1)!$. We need to show that the statement holds for $n$, i.e. $2^n < n!$.
+Suppose $P(n-1)$ is true, meaning that $2^{n-1} < (n-1)!$ holds for $n-1, n \geq 5$. We need to show that $P(n)$ is true, i.e. $2^n < n!$.
 
 \begin{align*}
     2^n & = 2 \times 2^{n-1} \\
     & < 2 \times (n-1)! \\
 \end{align*}
 
-Since $n > 4$, we have $n > 2$. Therefore:
+Since $n \geq 5$, we have $n > 2$. Therefore:
 
 \begin{align*}
     & < 2 \times (n-1)! \\
@@ -190,7 +190,7 @@ Since $n > 4$, we have $n > 2$. Therefore:
     & = n!
 \end{align*}
 
-Therefore, by mathematical induction, the statement holds for all $n \geq 4, n \in N$.
+Therefore, by mathematical induction, $P(n)$ is true for all $n \geq 4, n \in N$, meaning that $2^n < n!$ for all $n \geq 4, n \in N$.
 
 \newpage
 
