@@ -19,9 +19,46 @@
 \begin{document}
 
 \section*{Exercise 1}
-(15 points) Construct a bijection between $\mathbb{N}$ and the set of all odd integers greater than one hundred. A proof of the bijectivity is required.
+(15 points) Construct a bijection between $\mathbb{N}$ and the set of all odd integers greater than one hundred. A proof of the bijectivity is required. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+Let's define $f: \mathbb{N} \rightarrow \{x \in \mathbb{Z} : x \text{ is odd and } x > 100\}$ by:
+
+$$f(n) = 2n + 101$$
+
+\textbf{Proof of Bijectivity:}\\
+
+We will prove that $f$ is both injective and surjective. \\
+
+\noindent
+1) \textbf{Proof of Injectivity:}
+   \begin{itemize}
+    \item Let $n_1, n_2 \in \mathbb{N}$ and suppose $f(n_1) = f(n_2)$
+    \item Then $2n_1 + 101 = 2n_2 + 101$
+    \item $\implies 2n_1 = 2n_2$
+    \item $\implies n_1 = n_2$
+    \item Therefore, $f$ is injective.
+   \end{itemize}
+
+\noindent
+2) \textbf{Proof of Surjectivity:}
+   \begin{itemize}
+    \item Let $y$ be any odd integer greater than 100.
+    \item Let $n = \frac{y - 101}{2}$. We need to show that:
+    \begin{itemize}
+    \item a) $n \in \mathbb{N}$
+    \item b) $f(n) = y$
+    \end{itemize}
+
+   \item Since $y$ is odd and greater than 100, we can write $y = 2m + 101$ for some $m \in \mathbb{N}$
+   \item Plugging $y$ into the expression of $n$, we get $n = m \in \mathbb{N}$, satisfying (a)
+   
+   \item And $f(n) = 2(\frac{y - 101}{2}) + 101 = y - 101 + 101 = y$, satisfying (b)
+
+   \end{itemize}
+
+Therefore, $f$ is both injective and surjective, hence bijective.
 
 \newpage
 
