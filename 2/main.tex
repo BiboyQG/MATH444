@@ -65,7 +65,43 @@ Therefore, $f$ is both injective and surjective, hence bijective.
 \section*{Exercise 2}
 (15 points) Use mathematical induction to prove that if the set $A$ has $n$ elements, then the power set $\mathcal{P}(A)$ has $2^n$ elements.
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+We will prove this by mathematical induction on $n$. \\
+
+\textbf{Base Case:} Let $n = 0$, meaning $A = \emptyset$.
+The power set $\mathcal{P}(\emptyset)$ contains only one element: the empty set itself.
+Therefore, $|\mathcal{P}(\emptyset)| = 1 = 2^0$, so the statement holds for $n = 0$. \\
+
+\textbf{Inductive Hypothesis:} 
+Assume the statement holds for some $k \geq 0$. That is, if $|A| = k$, then $|\mathcal{P}(A)| = 2^k$. \\
+
+\textbf{Inductive Step:} 
+Let $B$ be a set with $k+1$ elements. We need to prove that $|\mathcal{P}(B)| = 2^{k+1}$.
+Choose any element $x \in B$ and let $A = B \setminus \{x\}$. Then $|A| = k$.
+
+We can partition $\mathcal{P}(B)$ into two disjoint sets:
+\begin{align*}
+S_1 &= \{X \in \mathcal{P}(B) : x \notin X\} \\
+S_2 &= \{X \in \mathcal{P}(B) : x \in X\}
+\end{align*}
+
+After observing the above, we can conclude that:
+\begin{itemize}
+\item $S_1$ is identical to $\mathcal{P}(A)$, so $|S_1| = 2^k$ by the inductive hypothesis.
+\item $S_2$ can be obtained by adding $x$ to each set in $S_1$, so $|S_2| = |S_1| = 2^k$.
+\item $S_1$ and $S_2$ are disjoint and their union is $\mathcal{P}(B)$.
+\end{itemize}
+
+Therefore:
+\begin{align*}
+|\mathcal{P}(B)| &= |S_1| + |S_2| \\
+&= 2^k + 2^k \\
+&= 2 \cdot 2^k \\
+&= 2^{k+1}
+\end{align*}
+
+By the principle of mathematical induction, we conclude that if $|A| = n$, then $|\mathcal{P}(A)| = 2^n$ for all $n \geq 0$.
 
 \newpage
 
