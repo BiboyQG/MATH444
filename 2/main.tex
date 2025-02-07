@@ -110,31 +110,31 @@ By the principle of mathematical induction, we conclude that if $|A| = n$, then 
 
 \textbf{Solution:} \\
 
-Define a function $f: \mathcal{F}(\mathbb{N}) \rightarrow \mathbb{N}$ as follows:
+Define a function $f: \mathcal{F}(\mathbb{N}) \rightarrow \mathbb{N}$ as follows: \\
 
 For any finite subset $A \in \mathcal{F}(\mathbb{N})$, let
 \[f(A) = \sum_{n \in A} 2^n\]
 
-To prove that $f$ is injective, we will show that if $f(A) = f(B)$, then $A = B$. 
+To prove that $f$ is injective, we will show that if $f(A) = f(B)$, then $A = B$. \\
 
 Suppose $f(A) = f(B)$. Then:
 \[\sum_{n \in A} 2^n = \sum_{n \in B} 2^n\]
 
-Assume, for the sake of contradiction, that $A \neq B$. Then there exists some number that is in one set but not the other. Let $m$ be the largest such number.
+Assume, for the sake of contradiction, that $A \neq B$. Then there exists some number that is in one set but not the other. Let $m$ be the largest such number. \\
 
 Without loss of generality, assume $m \in A$ and $m \notin B$. Then:
 \[f(A) - f(B) = 2^m + \sum_{n \in A \setminus \{m\}} 2^n - \sum_{n \in B} 2^n\]
 
-By our choice of $m$ as the largest element where $A$ and $B$ differ, we know that for all $n > m$, either $n$ is in both sets or in neither set. Therefore, these terms cancel out in the difference.
+By our choice of $m$ as the largest element where $A$ and $B$ differ, we know that for all $n > m$, either $n$ is in both sets or in neither set. Therefore, these terms cancel out in the difference. \\
 
-For all $n < m$, $\sum_{n \in A \setminus \{m\}} 2^n$ can be at most $2^m - 1$ (a property of geometric series), and $\sum_{n \in B} 2^n$ can be at least $1$ ($2^0 = 1$).
+For all $n < m$, $\sum_{n \in A \setminus \{m\}} 2^n$ can be at most $2^m - 1$ (a property of geometric series), and $\sum_{n \in B} 2^n$ can be at least $1$ ($2^0 = 1$). \\
 
-Therefore, the difference of the sums is at most $2^m - 1 - 1 = 2^m - 2$.
+Therefore, the difference of the sums is at most $2^m - 1 - 1 = 2^m - 2$. \\
 
 Therefore:
 \[f(A) - f(B) \geq 2^m - (2^m - 2) = 2\]
 
-This contradicts our assumption that $f(A) = f(B)$. Thus, we must have $A = B$, suggesting the injectivity of $f$.
+This contradicts our assumption that $f(A) = f(B)$. Thus, we must have $A = B$, suggesting the injectivity of $f$. \\
 
 Since $f$ is injective, this suggests that $|\mathcal{F}(\mathbb{N})| \leq |\mathbb{N}|$, further suggesting that $\mathcal{F}(\mathbb{N})$ is also countable by the definition of countability.
 
