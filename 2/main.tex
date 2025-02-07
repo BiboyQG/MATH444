@@ -184,8 +184,40 @@ Therefore, $x_1x_2 \in K$ as it is of the form $s + t\sqrt{2}$ where $s, t \in \
 \newpage
 
 \section*{Exercise 5}
-(15 points) Prove that $(a + b)^2 \leq 2(a^2 + b^2)$ for all $a,b \in \mathbb{R}$. Show that equality holds if and only if $a = b$.
+(15 points) Prove that $(a + b)^2 \leq 2(a^2 + b^2)$ for all $a,b \in \mathbb{R}$. Show that equality holds if and only if $a = b$. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+1) Prove the inequality $(a + b)^2 \leq 2(a^2 + b^2)$.
+\begin{align*}
+2(a^2 + b^2) - (a + b)^2 &= 2a^2 + 2b^2 - (a^2 + 2ab + b^2) \\
+&= 2a^2 + 2b^2 - a^2 - 2ab - b^2 \\
+&= a^2 + b^2 - 2ab \\
+&= (a - b)^2 \\
+&\geq 0
+\end{align*}
+
+Therefore, $2(a^2 + b^2) - (a + b)^2 \geq 0$, which means $(a + b)^2 \leq 2(a^2 + b^2)$. \\
+
+2) Prove that equality holds if and only if $a = b$.
+
+$(\Rightarrow)$ If equality holds, then:
+\begin{align*}
+(a + b)^2 &= 2(a^2 + b^2) \\
+a^2 + 2ab + b^2 &= 2a^2 + 2b^2 \\
+2ab &= a^2 + b^2 \\
+0 &= a^2 - 2ab + b^2 \\
+0 &= (a - b)^2
+\end{align*}
+
+Since $(a - b)^2 = 0$, we must have $a = b$.
+
+$(\Leftarrow)$ If $a = b$, then:
+\begin{align*}
+(a + b)^2 &= (2a)^2 = 4a^2 \\
+2(a^2 + b^2) &= 2(a^2 + a^2) = 4a^2
+\end{align*}
+
+Therefore, $(a + b)^2 = 2(a^2 + b^2)$ when $a = b$.
 
 \end{document}
