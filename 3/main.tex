@@ -123,7 +123,36 @@ Show that if nonempty sets $A, B \subseteq \mathbb{R}$ are bounded above, then $
 
 \textbf{Solution:} \\
 
+Since there are two parts to this problem, we will solve them one by one. If nonempty sets $A, B \subseteq \mathbb{R}$ are bounded above,
+\begin{itemize}
+    \item Show that $A \cup B$ is bounded above
+    \item Prove that $\sup(A \cup B) = \max(\sup A, \sup B)$
+\end{itemize}
 
+\begin{itemize}
+\item 1) Since $A$ is bounded above, by definition of supremum, $\forall a \in A$, $a \leq \text{sup}A$. 
+
+Similarly, since $B$ is bounded above, $\forall b \in B$, $b \leq \text{sup}B$
+
+Let $S = \max(\text{sup}A, \text{sup}B)$. Then for any $x \in A \cup B$:
+\begin{itemize}
+    \item If $x \in A$, then $x \leq \text{sup}A \leq S$
+    \item If $x \in B$, then $x \leq \text{sup}B \leq S$
+\end{itemize}
+Therefore, $A \cup B$ is bounded above by $S$.
+
+\item 2) Consider the above $S$. Since we've shown that $S$ is an upper bound for $A \cup B$, we only need to show that it's the least upper bound.
+
+Suppose $S_i$ is any upper bound for $A \cup B$.
+Then $S_i$ is an upper bound for both $A$ and $B$.
+Therefore, $\text{sup}A \leq S_i$ and $\text{sup}B \leq S_i$.
+Thus, $\max(\text{sup}A, \text{sup}B) = S \leq S_i$.
+
+Since $S_i$ is any upper bound for $A \cup B$, we conclude that $S = \sup(A \cup B)$.
+
+Therefore, $\sup(A \cup B) = \max(\sup A, \sup B)$.
+
+\end{itemize}
 
 \newpage
 
