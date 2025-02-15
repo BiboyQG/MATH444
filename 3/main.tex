@@ -90,8 +90,31 @@ Let $S := \{1-\frac{(-1)^n}{n} : n \in \mathbb{N}\}$. Find $\inf S$ and $\sup S$
 
 \textbf{Solution:} \\
 
+\begin{itemize}
+   \item \textbf{Infimum:}
 
+For any $x \in S$:
+\begin{itemize}
+    \item If $n$ is even: $x = 1-\frac{1}{n} \geq 1-\frac{1}{2} = \frac{1}{2}$
+    \item If $n$ is odd: $x = 1+\frac{1}{n} > 1 > \frac{1}{2}$
+\end{itemize}
+Therefore, $\frac{1}{2}$ is a lower bound. \\
 
+Since $\frac{1}{2}$ is achieved at $n=2$, it is the greatest lower bound. \\
+
+\item \textbf{Supremum:}
+
+For any $x \in S$:
+\begin{itemize}
+    \item If $n$ is even: $x = 1-\frac{1}{n} < 1 < 2$
+    \item If $n$ is odd: $x = 1+\frac{1}{n} \leq 1+1 = 2$
+\end{itemize}
+Therefore, 2 is an upper bound. \\
+
+Since 2 is achieved at $n=1$, it is the least upper bound.
+\end{itemize}
+
+Thus, $\inf S = \frac{1}{2}$ and $\sup S = 2$.
 \newpage
 
 \section*{Exercise 3}
