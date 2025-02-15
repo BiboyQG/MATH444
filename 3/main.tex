@@ -26,7 +26,62 @@ and
 
 \textbf{Solution:} \\
 
+We prove the two identities by considering the cases when $a \geq b$ and when $a < b$. \\
 
+\textbf{1):} $a \geq b$ \\
+
+In this case:
+\begin{align*}
+\max(a,b) &= a \\
+\min(a,b) &= b \\
+|a-b| &= a-b \text{ (since $a \geq b$)}
+\end{align*}
+
+For the first identity:
+\begin{align*}
+\frac{1}{2}(a + b + |a-b|) &= \frac{1}{2}(a + b + (a-b)) \\
+&= \frac{1}{2}(2a) \\
+&= a \\
+&= \max(a,b)
+\end{align*}
+
+For the second identity:
+\begin{align*}
+\frac{1}{2}(a + b - |a-b|) &= \frac{1}{2}(a + b - (a-b)) \\
+&= \frac{1}{2}(2b) \\
+&= b \\
+&= \min(a,b)
+\end{align*}
+
+\textbf{2):} $a < b$ \\
+
+In this case:
+\begin{align*}
+\max(a,b) &= b \\
+\min(a,b) &= a \\
+|a-b| &= -(a-b) = b-a \text{ (since $a < b$)}
+\end{align*}
+
+For the first identity:
+\begin{align*}
+\frac{1}{2}(a + b + |a-b|) &= \frac{1}{2}(a + b + (b-a)) \\
+&= \frac{1}{2}(2b) \\
+&= b \\
+&= \max(a,b)
+\end{align*}
+
+For the second identity:
+\begin{align*}
+\frac{1}{2}(a + b - |a-b|) &= \frac{1}{2}(a + b - (b-a)) \\
+&= \frac{1}{2}(2a) \\
+&= a \\
+&= \min(a,b)
+\end{align*}
+
+Therefore, we have proven that for all $a, b \in \mathbb{R}$:
+\[\max(a,b) = \frac{1}{2}(a + b + |a-b|)\]
+and
+\[\min(a,b) = \frac{1}{2}(a + b - |a-b|)\]
 
 \newpage
 
