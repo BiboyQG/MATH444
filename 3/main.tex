@@ -187,8 +187,24 @@ Thus, we have proven that there exists an $M \in \mathbb{N}$ such that $x_n > 0$
 Show that
 \[\lim\left(\sqrt{n^2 + 1} - n\right) = 0.\]
 
-\textbf{Solution:} \\
+\textbf{Solution:}
 
+\begin{align*}
+|\sqrt{n^2 + 1} - n| &= \left|\frac{(\sqrt{n^2 + 1} - n)(\sqrt{n^2 + 1} + n)}{\sqrt{n^2 + 1} + n}\right| \\
+&= \left|\frac{1}{\sqrt{n^2 + 1} + n}\right| \\
+&= \frac{1}{\sqrt{n^2 + 1} + n}
+\end{align*}
 
+Since $n^2 \geq 0$, we have $n^2 + 1 \geq 1$. \\
+
+Therefore, $\sqrt{n^2 + 1} \geq 1$. \\
+
+Thus, $\frac{1}{\sqrt{n^2 + 1} + n} \leq \frac{1}{n+1} < \frac{1}{n}$ for all $n$. \\
+
+Since, $\lim\left(\frac{1}{n}\right) = 0$, by comperison test for convergence, we have:
+
+\begin{align*}
+\lim\left(\sqrt{n^2 + 1} - n\right) &= 0
+\end{align*}
 
 \end{document}
