@@ -161,7 +161,25 @@ Prove that if $\lim(x_n) = x$ and if $x > 0$, then there exists a natural number
 
 \textbf{Solution:} \\
 
+By the definition of limit, for any $\epsilon > 0$, 
+$\exists M \in \mathbb{N}$ such that $|x_n - x| < \epsilon$ for all $n \geq M$. \\
 
+Let $\epsilon = \frac{x}{2}$. Since $x > 0$, $\epsilon > 0$. \\
+
+Then we have:
+$\exists M \in \mathbb{N}$ such that $|x_n - x| < \frac{x}{2}$ for all $n \geq M$. \\
+
+Breaking down the absolute value inequality:
+$$-\frac{x}{2} < x_n - x < \frac{x}{2} \text{ for all } n \geq M$$
+
+Adding $x$ to all parts of the inequality:
+$$\frac{x}{2} < x_n < \frac{3x}{2} \text{ for all } n \geq M$$
+
+Since $x > 0$, we have $\frac{x}{2} > 0$. \\
+
+Therefore, $x_n > \frac{x}{2} > 0$ for all $n \geq M$. \\
+
+Thus, we have proven that there exists an $M \in \mathbb{N}$ such that $x_n > 0$ for all $n \geq M$.
 
 \newpage
 
