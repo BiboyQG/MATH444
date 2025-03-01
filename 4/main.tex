@@ -47,9 +47,22 @@ By the definition of the limit, we have
 \section*{Exercise 2}
 Compute $\lim \frac{n!}{n^n}$, or show that this limit does not exist. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
+Define $a_n = \frac{n!}{n^n}$ and find the ratio of consecutive terms:
 
+\begin{align*}
+\frac{a_{n+1}}{a_n} &= \frac{(n+1)!/(n+1)^{n+1}}{n!/n^n} \\
+&= \frac{(n+1) \cdot n! \cdot n^n}{n! \cdot (n+1)^{n+1}} \\
+&= \frac{(n+1) \cdot n^n}{(n+1) \cdot (n+1)^n} \\
+&= \frac{n^n}{(n+1)^n} \\
+&= \left(\frac{n}{n+1}\right)^n < 1 \quad \text{(since $\frac{n}{n+1} < 1$)}
+\end{align*}
+
+Since all the terms are nonzero, by Ratio Test for convergence, we have:
+\[
+\lim \frac{n!}{n^n} = 0
+\]
 
 \newpage
 
