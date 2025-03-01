@@ -69,9 +69,30 @@ Since all the terms are nonzero, by Ratio Test for convergence, we have:
 \section*{Exercise 3}
 Let $(x_n)_{n \in \mathbb{N}}$ be a sequence of positive real numbers such that $\lim x_n^{1/n} = L$ with $L < 1$. Prove that $\lim x_n = 0$. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
+Let $r \in \mathbb{R}$ such that $L < r < 1$. \\
 
+By the definition of limit, there exists $N \in \mathbb{N}$ such that for all $n \geq N$:
+\begin{align*}
+|x_n^{1/n} - L| < r - L
+\end{align*}
+
+So we have:
+\begin{align*}
+x_n^{1/n} &< L + (r - L)\\
+&= r
+\end{align*}
+
+Therefore, for all $n \geq N$, we have:
+\begin{align*}
+x_n &< r^n
+\end{align*}
+
+Since $0 < x_n < r^n$ for all $n \geq N$ and $\lim r^n = 0$ (since $r < 1$), by the Squeeze Theorem, we conclude that:
+\begin{align*}
+\lim x_n = 0
+\end{align*}
 
 \newpage
 
