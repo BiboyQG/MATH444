@@ -25,9 +25,22 @@ Let $(b_n)_{n \in \mathbb{N}}$ be a bounded sequence, and $(a_n)_{n \in \mathbb{
 Show that 
 \[\lim(a_n b_n) = 0.\]
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
+Since $(b_n)_{n \in \mathbb{N}}$ is a bounded sequence, there exists $M > 0$ such that
+\[|b_n| \leq M \quad \text{for all } n \in \mathbb{N}\]
 
+Since $\lim a_n = 0$, for any $\epsilon > 0$, there exists $N \in \mathbb{N}$ such that
+\[|a_n| < \frac{\epsilon}{M} \quad \text{for all } n \geq N\]
+
+Based on the above, for all $n \geq N$, we have:
+\[|a_n b_n| = |a_n| \cdot |b_n| \leq |a_n| \cdot M < \frac{\epsilon}{M} \cdot M = \epsilon\]
+
+Therefore, for any $\epsilon > 0$, there exists $N \in \mathbb{N}$ such that
+\[|a_n b_n| < \epsilon \quad \text{for all } n \geq N\]
+
+By the definition of the limit, we have
+\[\lim(a_n b_n) = 0\]
 
 \newpage
 
