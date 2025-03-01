@@ -148,10 +148,51 @@ for each $n \in \mathbb{N}$.
 \item[(b)] Prove that $(x_n)_{n \in \mathbb{N}}$ converges.
 \end{itemize}
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
+(a) Proof by induction: \\
 
+Base case: For $n = 1$,
+\begin{align*}
+x_1 &= \frac{1}{1^2} = 1\\
+2 - \frac{1}{1} &= 2 - 1 = 1
+\end{align*}
 
-\newpage
+The inequality holds. \\
+
+Inductive step: Assume $x_k \leq 2 - \frac{1}{k}$ for some $k \in \mathbb{N}$.
+We will prove that $x_{k+1} \leq 2 - \frac{1}{k+1}$. \\
+
+We have:
+\begin{align*}
+x_{k+1} &= x_k + \frac{1}{(k+1)^2}\\
+&\leq \left(2 - \frac{1}{k}\right) + \frac{1}{(k+1)^2} \quad \text{(by induction hypothesis)}
+\end{align*}
+
+We need to show:
+\begin{align*}
+\left(2 - \frac{1}{k}\right) + \frac{1}{(k+1)^2} &\leq 2 - \frac{1}{k+1}\\
+\end{align*}
+
+Rearranging:
+\begin{align*}
+\frac{1}{(k+1)^2} &\leq \frac{1}{k} - \frac{1}{k+1}\\
+&= \frac{1}{k(k+1)}
+\end{align*}
+
+Since $k \in \mathbb{N}$, $k, k+1 > 0$, and $k < k+1$. Therefore, the above inequality holds. By the principle of mathematical induction, $x_n \leq 2 - \frac{1}{n}$ for all $n \in \mathbb{N}$.
+
+(b) 
+\begin{align*}
+x_{n+1} - x_n = \frac{1}{(n+1)^2} > 0 \quad \text{for all } n \in \mathbb{N}
+\end{align*}
+
+Therefore, $(x_n)$ is an increasing sequence. \\
+
+From part (a), $x_n \leq 2 - \frac{1}{n} < 2$ for all $n \in \mathbb{N}$. \\
+
+Therefore, $(x_n)$ is an increasing sequence that is bounded above by 2. \\
+
+By the Monotone Convergence Theorem, $(x_n)_{n \in \mathbb{N}}$ converges to some limit $L$ where $L \leq 2$.
 
 \end{document}
