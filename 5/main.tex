@@ -127,7 +127,31 @@ for all $n \in \mathbb{N}$. Compute
 
 \textbf{Solution: }\\
 
+$(x_n)_{n \in \mathbb{N}}$ has two subsequences:
+\begin{itemize}
+    \item For odd terms: $\lim x_{2n-1} = \lim (1+\frac{1}{n}) = 1$
+    \item For even terms: $\lim x_{2n} = \lim (-\frac{1}{n}) = 0$
+\end{itemize}
 
+(a) By theorem, $\lim \sup x_n$ is the larger of these two subsequential limits, so:
+\begin{align*}
+\lim \sup x_n = 1
+\end{align*}
+
+(b) By theorem, $\lim \inf x_n$ is the smaller of the two subsequential limits, so:
+\begin{align*}
+\lim \inf x_n = 0
+\end{align*}
+
+(c) The supremum of the entire sequence is the largest term of the sequence. Since even-indexed term is negative, we only need to consider the odd-indexed terms. For the odd-indexed terms $x_{2n-1} = 1+\frac{1}{n}$, this value is largest when $n=1$, giving:
+\begin{align*}
+\sup\{x_n : n \in \mathbb{N}\} = x_1 = 2
+\end{align*}
+
+(d) The infimum of the entire sequence is the smallest term of the sequence. Since odd-indexed term is positive, we only need to consider the even-indexed terms. For the even-indexed terms $x_{2n} = -\frac{1}{n}$, this value is smallest when $n=1$, giving:
+\begin{align*}
+\inf\{x_n : n \in \mathbb{N}\} = x_2 = -1
+\end{align*}
 
 \newpage
 
