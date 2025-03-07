@@ -86,7 +86,25 @@ Show that if $(x_n)_{n \in \mathbb{N}}$ is not bounded, then there exists a subs
 
 \textbf{Solution: }\\
 
+Construct a subsequence $(y_n)_{n \in \mathbb{N}}$ of $(x_n)_{n \in \mathbb{N}}$ as follows: \\
 
+Let $n_1$ be the smallest index such that $|x_{n_1}| > 1$. Existence holds because $(x_n)_{n \in \mathbb{N}}$ is unbounded. Let $y_1 = x_{n_1}$. \\
+
+For $k \geq 2$, let $n_k$ be the smallest index with $n_k > n_{k-1}$ such that $|x_{n_k}| > k$. Existence holds because $(x_n)_{n \in \mathbb{N}}$ is unbounded. Let $y_k = x_{n_k}$. \\
+
+By construction, $(y_k)_{k \in \mathbb{N}}$ is a subsequence of $(x_n)_{n \in \mathbb{N}}$ where $|y_k| > k$ for all $k \in \mathbb{N}$. \\
+
+For all $k \in \mathbb{N}$, we have 
+\begin{align*}
+\left|\frac{1}{y_k}\right| = \frac{1}{|y_k|} < \frac{1}{k}
+\end{align*}
+
+Since $\lim \frac{1}{k} = 0$ and $\left|\frac{1}{y_k}\right| \geq 0$ for all $k \in \mathbb{N}$, by the squeeze theorem, 
+\begin{align*}
+\lim \left|\frac{1}{y_k}\right| = 0
+\end{align*}
+
+which implies that $\lim \frac{1}{y_k} = 0$, completing the proof.
 
 \newpage
 
