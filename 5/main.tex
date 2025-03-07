@@ -34,7 +34,47 @@ for all $n \in \mathbb{N}$. Show that $(z_n)_{n \in \mathbb{N}}$ is convergent i
 
 \textbf{Solution: }\\
 
+Since this is a if and only if statement, we will show both directions. \\
 
+($\Rightarrow$) $(z_{2n-1})_{n \in \mathbb{N}}$ and $(z_{2n})_{n \in \mathbb{N}}$ are subsequences of $(z_n)_{n \in \mathbb{N}}$. Since $(z_n)_{n \in \mathbb{N}}$ is convergent, all of its subsequences must converge to the same limit $L$. Therefore:
+\begin{align*}
+\lim z_{2n-1} = L \quad \text{and} \quad \lim z_{2n} = L
+\end{align*}
+
+Since $z_{2n-1} = x_n$ and $z_{2n} = y_n$ for all $n \in \mathbb{N}$, we have:
+\begin{align*}
+\lim x_n = L \quad \text{and} \quad \lim y_n = L
+\end{align*}
+
+which proves that both sequences $(x_n)_{n \in \mathbb{N}}$ and $(y_n)_{n \in \mathbb{N}}$ are convergent and $\lim x_n = \lim y_n = L$. \\
+
+($\Leftarrow$) Suppose both $(x_n)_{n \in \mathbb{N}}$ and $(y_n)_{n \in \mathbb{N}}$ are convergent with $\lim x_n = \lim y_n = L$. \\
+
+Let $\epsilon > 0$. Since $\lim x_n = L$, there exists $N_1 \in \mathbb{N}$ such that for all $n \geq N_1$:
+\begin{align*}
+|x_n - L| < \epsilon
+\end{align*}
+
+Similarly, since $\lim y_n = L$, there exists $N_2 \in \mathbb{N}$ such that for all $n \geq N_2$:
+\begin{align*}
+|y_n - L| < \epsilon
+\end{align*}
+
+Let $N = \max(2N_1 - 1, 2N_2)$. Then for all $n \geq N$: \\
+
+If $n = 2k-1$, then $k = \frac{n+1}{2} \geq \frac{2N_1-1+1}{2} = N_1$. Thus:
+\begin{align*}
+|z_n - L| = |z_{2k-1} - L| = |x_k - L| < \epsilon
+\end{align*}
+
+If $n = 2k$, then $k = \frac{n}{2} \geq \frac{2N_2}{2} = N_2$. Thus:
+\begin{align*}
+|z_n - L| = |z_{2k} - L| = |y_k - L| < \epsilon
+\end{align*}
+
+Therefore, $\lim z_n = L$, which proves that $(z_n)_{n \in \mathbb{N}}$ is convergent. \\
+
+Hence, $(z_n)_{n \in \mathbb{N}}$ is convergent if and only if both $(x_n)_{n \in \mathbb{N}}$ and $(y_n)_{n \in \mathbb{N}}$ are convergent and $\lim x_n = \lim y_n$.
 
 \newpage
 
