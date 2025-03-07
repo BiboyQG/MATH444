@@ -164,7 +164,34 @@ for all $n \in \mathbb{N}$, show that $(x_n)_{n \in \mathbb{N}}$ is a Cauchy seq
 
 \textbf{Solution: }\\
 
+We want to show that for any $\epsilon > 0$, there exists an $N \in \mathbb{N}$ such that for all $m, n \geq N$, we have $|x_m - x_n| < \epsilon$. \\
 
+Without loss of generality, assume $m > n$ (since if $m = n$, then $|x_m - x_n| = 0 < \epsilon$). \\
+
+For any $m, n \in \mathbb{N}$ with $m > n$, we have:
+\begin{align*}
+|x_m - x_n| &= |x_m - x_{m-1} + x_{m-1} - x_{m-2} + \cdots + x_{n+1} - x_n| \\
+&\leq |x_m - x_{m-1}| + |x_{m-1} - x_{m-2}| + \cdots + |x_{n+1} - x_n| \\
+&< r^{m-1} + r^{m-2} + \cdots + r^n \\
+&= r^n(1 + r + r^2 + \cdots + r^{m-n-1}) \\
+&= r^n \frac{1 - r^{m-n}}{1 - r} \\
+&= \frac{r^n - r^m}{1 - r} \\
+&< \frac{r^n}{1 - r}
+\end{align*}
+
+Here, since $0 < r < 1$, we have $1 - r > 0$, and $0 < r^n < 1$ for all $n \in \mathbb{N}$. \\
+
+And since $n$ is arbitrary, for any $\epsilon > 0$, we always choose $N \in \mathbb{N}$ such that:
+\begin{align*}
+\frac{r^N}{1 - r} < \epsilon
+\end{align*}
+
+Then for all $m, n \geq N$, we have:
+\begin{align*}
+|x_m - x_n| < \frac{r^N}{1 - r} < \epsilon
+\end{align*}
+
+Therefore, $(x_n)_{n \in \mathbb{N}}$ is a Cauchy sequence.
 
 \newpage
 
