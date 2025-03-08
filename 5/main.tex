@@ -206,8 +206,122 @@ x_{n+1} &:= 2 + \frac{1}{x_n}
 \end{align*}
 for all $n \in \mathbb{N}$. Show that $(x_n)_{n \in \mathbb{N}}$ converges and find the limit. \\
 
-\textbf{Solution: }\\
+\textbf{Solution: }
+\begin{align*}
+x_{n+1} - x_n &= 2 + \frac{1}{x_n} - x_n\\
+&= \frac{2x_n + 1 - x_n^2}{x_n}\\
+&= \frac{-(x_n^2 - 2x_n - 1)}{x_n}
+\end{align*}
 
+The quadratic expression $x_n^2 - 2x_n - 1$ has roots at $1 \pm \sqrt{2}$. Since $x_n > 0$ for all $n$, we only need to consider the positive root $1 + \sqrt{2}$. \\
 
+For the sign of $x_{n+1} - x_n$:
+\begin{align*}
+\text{If } 0 < x_n < 1 + \sqrt{2} &\implies x_n^2 - 2x_n - 1 < 0 \implies x_{n+1} - x_n > 0\\
+\text{If } x_n > 1 + \sqrt{2} &\implies x_n^2 - 2x_n - 1 > 0 \implies x_{n+1} - x_n < 0\\
+\text{If } x_n = 1 + \sqrt{2} &\implies x_n^2 - 2x_n - 1 = 0 \implies x_{n+1} - x_n = 0
+\end{align*}
+
+Simplifying the above, we get:
+\begin{align*}
+\text{If } x_n < 1 + \sqrt{2} &\implies x_n < x_{n+1}\\
+\text{If } x_n > 1 + \sqrt{2} &\implies x_n > x_{n+1}\\
+\text{If } x_n = 1 + \sqrt{2} &\implies x_n = x_{n+1}
+\end{align*}
+
+Computing the first few terms:
+\begin{align*}
+x_1 &= 2 < 1 + \sqrt{2} \approx 2.414 \implies x_1 < x_2\\
+x_2 &= 2.5 > 1 + \sqrt{2} \implies x_2 > x_3\\
+x_3 &= 2.4 < 1 + \sqrt{2} \implies x_3 < x_4\\
+x_4 &\approx 2.417 > 1 + \sqrt{2} \implies x_4 > x_5
+\end{align*}
+
+Observing the sequence, we see that it oscillates around $1 + \sqrt{2}$ with:
+\begin{align*}
+x_1 < x_3 < x_5 < \ldots < 1 + \sqrt{2} < \ldots < x_6 < x_4 < x_2
+\end{align*}
+
+Therefore, we want to show that these two subsequences(odd-indexed and even-indexed subsequences, which form the entire sequence) converge to the same limit $1 + \sqrt{2}$. \\
+
+Prove by induction that for all $n \geq 1$:
+\begin{itemize}
+    \item $x_{2n-1} < 1 + \sqrt{2}$ (all odd-indexed terms are less than $1 + \sqrt{2}$)
+    \item $x_{2n} > 1 + \sqrt{2}$ (all even-indexed terms are greater than $1 + \sqrt{2}$)
+\end{itemize}
+
+Base case: $x_1 = 2 < 1 + \sqrt{2}$ and $x_2 = 2.5 > 1 + \sqrt{2}$. \\
+
+Inductive step: Assume that for some $k \geq 1$, we have:
+\begin{align*}
+x_{2k-1} < 1 + \sqrt{2} \\
+x_{2k} > 1 + \sqrt{2}
+\end{align*}
+
+For $x_{2k+1}$:
+\begin{align*}
+x_{2k+1} = 2 + \frac{1}{x_{2k}}
+\end{align*}
+
+Since $x_{2k} > 1 + \sqrt{2}$, we have $\frac{1}{x_{2k}} < \frac{1}{1 + \sqrt{2}} = \sqrt{2} - 1$. \\
+
+Therefore, $x_{2k+1} = 2 + \frac{1}{x_{2k}} < 2 + \sqrt{2} - 1 = 1 + \sqrt{2}$. \\
+
+For $x_{2k+2}$:
+\begin{align*}
+x_{2k+2} = 2 + \frac{1}{x_{2k+1}}
+\end{align*}
+
+Since $x_{2k+1} < 1 + \sqrt{2}$, we have $\frac{1}{x_{2k+1}} > \frac{1}{1 + \sqrt{2}} = \sqrt{2} - 1$. \\
+
+Therefore, $x_{2k+2} = 2 + \frac{1}{x_{2k+1}} > 2 + \sqrt{2} - 1 = 1 + \sqrt{2}$. \\
+
+By the principle of mathematical induction, the pattern holds for all $n \geq 1$. \\
+
+Next, we use induction to prove both monotonicity properties. Define $f(x) = 2 + \frac{1}{x}$. \\
+
+Base case: We've calculated $x_1 = 2$, $x_2 = 2.5$, $x_3 = 2.4$, and $x_4 \approx 2.417$.
+We can verify that $x_3 > x_1$ and $x_4 < x_2$. \\
+
+Inductive hypothesis: Assume for some $k \geq 2$ that $x_{2k-1} > x_{2k-3}$ and $x_{2k} < x_{2k-2}$. \\
+
+For odd terms: We have $x_{2k+1} = f(x_{2k})$ and $x_{2k-1} = f(x_{2k-2})$.
+By our inductive hypothesis, $x_{2k} < x_{2k-2}$.
+Since $f$ is strictly decreasing, $f(x_{2k}) > f(x_{2k-2})$, which means $x_{2k+1} > x_{2k-1}$. \\
+
+For even terms: We have $x_{2k+2} = f(x_{2k+1})$ and $x_{2k} = f(x_{2k-1})$.
+From what we just proved, $x_{2k+1} > x_{2k-1}$.
+Since $f$ is strictly decreasing, $f(x_{2k+1}) < f(x_{2k-1})$, which means $x_{2k+2} < x_{2k}$. \\
+
+By the principle of mathematical induction, both properties hold for all $n \geq 1$. \\
+
+And by the Monotone Convergence Theorem, both subsequences converge. Denote their limits as $L_{odd}$ and $L_{even}$ respectively. \\
+
+Using the recurrence relation $x_{n+1} = 2 + \frac{1}{x_n}$, we get:
+\begin{align*}
+L_{even} = 2 + \frac{1}{L_{odd}} \\
+L_{odd} = 2 + \frac{1}{L_{even}}
+\end{align*}
+
+Substituting the first equation into the second:
+\begin{align*}
+L_{odd} = 2 + \frac{1}{2 + \frac{1}{L_{odd}}}
+\end{align*}
+
+We end up with a quadratic equation:
+\begin{align*}
+L_{odd}^2 - 2L_{odd} - 1 = 0
+\end{align*}
+
+Using the quadratic formula:
+\begin{align*}
+L_{odd} = \frac{2 \pm \sqrt{4 + 4}}{2} = 1 \pm \sqrt{2}
+\end{align*}
+
+Since $L_{odd} > 0$ (all terms in our sequence are positive), we have $L_{odd} = 1 + \sqrt{2}$. \\
+
+Similarly, we solve for $L_{even}$ and obtain $L_{even} = 1 + \sqrt{2}$. \\
+
+Since both subsequences converge to the same limit $1 + \sqrt{2}$, and they contain all terms of the original sequence, the sequence $(x_n)_{n \in \mathbb{N}}$ converges to $1 + \sqrt{2}$.
 
 \end{document}
