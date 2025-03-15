@@ -104,7 +104,33 @@ does not exist. \\
 
 \textbf{Solution: } \\
 
+According to Theorem, for $f: A \rightarrow \mathbb{R}$ with $c$ as a cluster point of $A$, the following are equivalent:
+\begin{enumerate}[(1)]
+    \item $f$ has no limit at $c$.
+    \item There exists a sequence $(x_n)$ with $x_n \in A$ and $x_n \neq c$ for all $n \in \mathbb{N}$ such that
+    $\lim x_n = c$ and $(f(x_n))_{n\in\mathbb{N}}$ diverges.
+\end{enumerate}
 
+Let $f(x) = \cos\frac{x+1}{x}$ and $c = 0$, and let the sequence $x_n = \frac{1}{n\pi}$ for $n \in \mathbb{N}$. \\
+
+We know that $\lim_{n\to\infty} x_n = 0$ since:
+\begin{align*}
+\lim_{n\to\infty} \frac{1}{n\pi} &= \lim_{n\to\infty} \frac{1}{n} \cdot \frac{1}{\pi} \\
+&= \frac{1}{\pi}\lim_{n\to\infty} \frac{1}{n} \\
+&= 0
+\end{align*}
+
+For $f(x_n)$:
+\begin{align*}
+f(x_n) &= \cos\left(\frac{x_n+1}{x_n}\right)\\
+&= \cos\left(\frac{\frac{1}{n\pi}+1}{\frac{1}{n\pi}}\right)\\
+&= \cos(1 + n\pi) \\
+&= (-1)^n\cos(1)
+\end{align*}
+
+Since $\cos(1) \neq 0$, the sequence $(f(x_n))$ alternates between the values $\cos(1)$ and $-\cos(1)$ as $n$ increases, which means it diverges. \\
+
+Therefore, by theorem, $\lim_{x \to 0} \cos \frac{x + 1}{x}$ does not exist.
 
 \newpage
 
