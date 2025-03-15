@@ -203,8 +203,45 @@ Use the Squeeze Theorem to evaluate
 $$\lim_{x \to 0} \frac{\sqrt{1 + 2x} - \sqrt{1 + 3x}}{x + 2x^2}$$
 where $x > 0$. Do not use L'Hôpital's Rule. \\
 
-\textbf{Solution: } \\
+\textbf{Solution: }
+\begin{align*}
+\frac{\sqrt{1 + 2x} - \sqrt{1 + 3x}}{x + 2x^2} &= \frac{(\sqrt{1 + 2x} - \sqrt{1 + 3x})(\sqrt{1 + 2x} + \sqrt{1 + 3x})}{(x + 2x^2)(\sqrt{1 + 2x} + \sqrt{1 + 3x})} \\
+&= \frac{(1 + 2x) - (1 + 3x)}{(x + 2x^2)(\sqrt{1 + 2x} + \sqrt{1 + 3x})} \\
+&= \frac{-x}{(x + 2x^2)(\sqrt{1 + 2x} + \sqrt{1 + 3x})} \\
+&= \frac{-1}{(1 + 2x)(\sqrt{1 + 2x} + \sqrt{1 + 3x})}
+\end{align*}
 
+For $x > 0$, we know that:
+\begin{align*}
+1 < \sqrt{1 + 2x} < 1 + x \\
+1 < \sqrt{1 + 3x} < 1 + \frac{3x}{2}
+\end{align*}
 
+Therefore:
+\begin{align*}
+2 < \sqrt{1 + 2x} + \sqrt{1 + 3x} < 2 + x + \frac{3x}{2} = 2 + \frac{5x}{2}
+\end{align*}
+
+Let $$g(x) = \frac{-1}{(1 + 2x)(\sqrt{1 + 2x} + \sqrt{1 + 3x})}$$
+
+Since all denominators are positive when $x > 0$, inverting the inequalities:
+\begin{align*}
+\frac{-1}{(1 + 2x)(2 + \frac{5x}{2})} < g(x) < \frac{-1}{2(1 + 2x)}
+\end{align*}
+
+For the lower bound:
+\begin{align*}
+\lim_{x \to 0} \frac{-1}{(1 + 2x)(2 + \frac{5x}{2})} = \frac{-1}{1 \cdot 2} = -\frac{1}{2}
+\end{align*}
+
+For the upper bound:
+\begin{align*}
+\lim_{x \to 0} \frac{-1}{2(1 + 2x)} = \frac{-1}{2 \cdot 1} = -\frac{1}{2}
+\end{align*}
+
+Therefore, by the Squeeze Theorem:
+\begin{align*}
+\lim_{x \to 0} \frac{\sqrt{1 + 2x} - \sqrt{1 + 3x}}{x + 2x^2} = -\frac{1}{2}
+\end{align*}
 
 \end{document}
