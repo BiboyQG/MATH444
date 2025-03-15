@@ -62,8 +62,39 @@ Justify your answer. \\
 
 \textbf{Solution: } \\
 
+\begin{enumerate}[(a)]
+    \item For 2: \\
+    Consider the sequence $(x_n)_{n\in\mathbb{N}}$ where $x_n = 2 - \frac{1}{n^2}$ for all $n \in \mathbb{N}$.
+    We have:
+    \begin{itemize}
+        \item $x_n \in A$ for all $n \in \mathbb{N}$ (by construction)
+        \item $x_n \neq 2$ for all $n \in \mathbb{N}$ (since $\frac{1}{n^2} > 0$)
+        \item $\lim x_n = \lim (2 - \frac{1}{n^2}) = 2 - 0 = 2$
+    \end{itemize}
 
+    By theorem, 2 is a cluster point of $A$.
 
+    \item Next we show that any other point $c \in A$ with $c \neq 2$ is not a cluster point of $A$. \\
+    
+    Let $c \in A$, so $c = 2 - \frac{1}{k^2}$ for some $k \in \mathbb{N}$.
+
+    For $c$ to be a cluster point, we need a sequence $(x_n)_{n\in\mathbb{N}}$ with $x_n \in A$, $x_n \neq c$ for all $n \in \mathbb{N}$, and $\lim x_n = c$.
+
+    Since the elements of $A$ form a strictly increasing sequence converging to 2, no subsequence of elements from $A \setminus \{c\}$ can converge to $c$.
+
+    \item Next we show that any other point $c \notin A$ with $c \neq 2$ is not a cluster point of $A$. \\
+
+    Let $c \in A$, so $c = 2 - \frac{1}{k^2}$ for some $k \in \mathbb{N}$. \\
+
+    For any such $c$, either:
+    \begin{itemize}
+        \item $c > 2$: All elements of $A$ are less than 2
+        \item $c < 1$: All elements of $A$ are greater than or equal to 1
+        \item $1 < c < 2$: Since $c \notin A$ and the elements of $A$ form a strictly increasing sequence, there must be consecutive elements $a_k < c < a_{k+1}$ in $A$, so no sequence of elements from $A$ can converge to $c$.
+    \end{itemize}
+\end{enumerate}
+
+Therefore, the set of all cluster points of $A$ is $\{2\}$.
 \newpage
 
 \section*{Exercise 3}
