@@ -151,8 +151,50 @@ Prove that:
 
 \textbf{Solution: } \\
 
+(a) For any $\epsilon > 0$, we want to find a $\delta > 0$ such that if $0 < |x - 0| < \delta$, then $|f(x) - 0| < \epsilon$. \\
 
+For any $x \in \mathbb{R}$:
+\begin{align*}
+|f(x)| &= \begin{cases}
+|x| & , \text{if } x \text{ is rational}, \\
+|-x| = |x| & , \text{if } x \text{ is irrational}.
+\end{cases}
+\end{align*}
 
+So in all cases, $|f(x)| = |x|$. \\
+
+Choose $\delta = \epsilon$. Then for any $x$ with $0 < |x| < \delta$, we have:
+\begin{align*}
+|f(x) - 0| = |f(x)| = |x| < \delta = \epsilon
+\end{align*}
+
+Therefore, $\lim_{x \to 0} f(x) = 0$. \\
+
+(b) Prove by contradiction. Suppose that $\lim_{x \to c} f(x) = L$ for some $L \in \mathbb{R}$. \\
+
+Since rational numbers are dense in $\mathbb{R}$, there exists a sequence of rational numbers $(r_n)$ such that $r_n \to c$ as $n \to \infty$. \\
+
+Similarly, since irrational numbers are dense in $\mathbb{R}$, there exists a sequence of irrational numbers $(s_n)$ such that $s_n \to c$ as $n \to \infty$. \\
+
+For the sequence $(r_n)$, since each $r_n$ is rational, $f(r_n) = r_n$. So as $n \to \infty$:
+\begin{align*}
+\lim_{n \to \infty} f(r_n) = \lim_{n \to \infty} r_n = c
+\end{align*}
+
+For the sequence $(s_n)$, since each $s_n$ is irrational, $f(s_n) = -s_n$. So as $n \to \infty$:
+\begin{align*}
+\lim_{n \to \infty} f(s_n) = \lim_{n \to \infty} (-s_n) = -c
+\end{align*}
+
+If the limit $\lim_{x \to c} f(x)$ exists and equals $L$, then both sequences must converge to $L$:
+\begin{align*}
+L = \lim_{n \to \infty} f(r_n) = c\\
+L = \lim_{n \to \infty} f(s_n) = -c
+\end{align*}
+
+This implies $c = -c$, which means $c = 0$. But this contradicts our assumption that $c \neq 0$. \\
+
+Therefore, if $c \neq 0$, then $\lim_{x \to c} f(x)$ does not exist.
 
 \newpage
 
